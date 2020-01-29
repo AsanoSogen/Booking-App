@@ -1,2 +1,0 @@
-class HostUsersController < ApplicationController
-end

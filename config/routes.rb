@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
-  
-  devise_for :host_users
-    root "host_users#show"
-    resources :host_users, only: [:show, :edit, :update]
-    
-  devise_for :users
-    root "users#index"
+
+  root "users#index"
+  devise_for :host_users, controllers: {
+    sessions:      'host_users/sessions',
+    passwords:     'host_users/passwords',
+    registrations: 'host_users/registrations'
+  }
+  devise_for :users, controllers: {
+    sessions:      'users/sessions',
+    passwords:     'users/passwords',
+    registrations: 'users/registrations'
+  }
+
+  resources :users, only: [:index, :show, :edit, :update]
+  resources :host_users, only: [:index, :show, :edit, :update]
 end
