@@ -4,10 +4,11 @@
       %h2 広告アカウント登録
       .account-page__inner--left.account-page__header2
         = link_to '予約アカウントの登録はこちら', '/users/sign_up' 
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
         .account-page__inner--left.account-page__header3
           = render "devise/shared/links"
     .account-page__inner--right.user-form
-      = form_for(resource, as: resource_name, url: new_host_user_registration_path(resource_name)) do |f|
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
         .field
           .field-label
@@ -31,4 +32,4 @@
           .field-input
             = f.password_field :password_confirmation, autocomplete: "off"
         .actions
-          = f.submit "Create Account", class: 'btn'
+          = f.submit "アカウント作成", class: 'btn'

@@ -1,6 +1,11 @@
 .header
     .header-logo
-        =current_user.name + "様の予約一覧"
+        %h1 booking-appへようこそ
+        %p 〜さあ、始めよう
+        .header-menu
+            = link_to '予約用ユーザーとしてログイン', new_user_session_path(@user) 
+            = link_to '告知用ユーザーとしてログイン', new_host_user_session_path(@host_user) 
+
         .nav
             %ul
                 %li<
@@ -10,4 +15,7 @@
         .main-image
             = image_tag "green.jpg", alt: "写真"
         .posts-container
+            .post-container2 
+                = link_to '予約用ユーザーとしてログイン', new_user_session_path(@user) 
+                = link_to '告知用ユーザーとしてログイン', new_host_user_session_path(@host_user) 
 

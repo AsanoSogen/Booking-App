@@ -5,12 +5,25 @@
     font-size: 30px;
     padding-top: 25px;
     padding-left: 80px;
+    display: flex;
+
+    p {
+        font-size: 15px;
+        margin-left: 400px;
+    }
+    .header-menu {
+        font-size: 15px;
+        margin-bottom: 50px;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+    }
 }
 
 .main {
     .main-container {
         width: 1440px;
-        height: 857px;
+        //height: 857px;
         background-color: #F5F5F5;
         margin-right: auto;
 
@@ -23,19 +36,19 @@
             width: 1440px;
             overflow: hidden;
             object-fit: cover;
-            height: 300px;
+            //height: 300px;
 
           }
       }
 
-      .posts-container {
-          width: 1240px;
-          height: 550px;
-          margin-top: 305px;
-          background-color: white;
-          margin-left: 100px;
-          border: solid 1px #DDDDDD;
-          position: absolute;
-      }
+      //.posts-container {
+        //  width: 1240px;
+        //  height: 550px;
+        //  margin-top: 305px;
+        //  background-color: white;
+        //  margin-left: 100px;
+        //  border: solid 1px #DDDDDD;
+        //  position: absolute;
+    //  }
     }
 }

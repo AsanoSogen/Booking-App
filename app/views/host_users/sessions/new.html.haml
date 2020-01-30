@@ -7,7 +7,7 @@
         .account-page__inner--left.account-page__header3
           = render "devise/shared/links"
     .account-page__inner--right.user-form
-      = form_for(resource, as: resource_name, url: new_host_user_session_path(resource_name)) do |f|
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         = devise_error_messages!
         .field
           .field-label
@@ -31,5 +31,5 @@
           .field-input
             = f.password_field :password_confirmation, autocomplete: "off"
         .actions
-          = f.submit "Create Account", class: 'btn'
+          = f.submit "ログインする", class: 'btn'
 
