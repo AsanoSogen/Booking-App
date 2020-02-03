@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index,  :show, :new, :create, :edit, :update]
   resources :host_users, only: [:show, :new, :create, :edit, :update]
 
-  get 'users/:id', to: 'users#show'                  
+          
 end

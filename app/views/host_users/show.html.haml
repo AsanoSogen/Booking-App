@@ -1,13 +1,17 @@
-.header
-    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
-    .header-logo
-        =current_user.name + "様の投稿"
-        .nav
-            %ul
-                %li<
+.host-show-header
+    .host-show-header-logo
+        =current_host_user.name 
+    .host-show-header-menu
+        = link_to "ログアウト", destroy_host_user_session_path, method: :delete, class: 'btn'
+        = link_to "編集する", edit_host_user_path, class: "btn"
+
+
     
-.main
-    .main-container
-        .main-image
-            = image_tag "green.jpg", alt: "写真"
-            .posts-container
+.host-show-main
+    .host-show-main-container
+        = image_tag "#{@host_user.image}", alt: "「編集する」からプロフィール画面,自己紹介文を設定することができます"
+    .host-profile
+        = "#{@host_user.text}" 
+
+    .host-show-posts-container 
+            

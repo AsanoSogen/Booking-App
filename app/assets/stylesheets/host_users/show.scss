@@ -1,0 +1,78 @@
+.host-show-header {
+    color: #222222;
+    height: 80px;
+    background-color: #ffffff;
+    font-size: 30px;
+    padding-top: 25px;
+    padding-left: 80px;
+    display: flex;
+
+    .host-show-header-logo {
+        font-size: 35px;
+    }
+    .host-show-header-menu {
+        font-size: 15px;
+        margin-bottom: 50px;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+    }
+}
+
+.host-show-main {
+    .host-show-main-container {
+        width: 100%;
+        height: 1207px;
+        background-color: #AAAAAA;
+        margin-right: auto;
+
+        img {
+            width: 400px;
+            overflow: hidden;
+            //object-fit: cover;
+            height: 400px;
+            margin-left: 100px;
+            margin-top: 70px;
+
+        }
+
+        p {
+              text-align: center;
+              margin-left: 600px;
+              font-size: 50px;
+              color: #555555;
+              position: absolute;
+              top: 200px;
+              font-weight: bold;
+          }
+
+          
+      }
+    .host-profile {
+        position: absolute;
+        height: 400px;
+        width: 45%;
+        /* right: 100px; */
+        top: 160px;
+        color: white;
+        line-height: 50px;
+        padding: 30px;
+        margin-left: 40%;
+        margin-right: 150px;
+        border: solid #ffffff 1px;
+
+      }
+
+    .host-show-posts-container {
+                
+        width: 64%;
+        height: 550px;
+        background-color: white;
+        margin-left: 18%;
+        margin-right: 18%;
+        border: solid 1px #DDDDDD;
+        position: absolute;
+        top: 700px;
+    }
+}
+

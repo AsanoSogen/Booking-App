@@ -1,14 +1,12 @@
-.header
-    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
-    .header-logo
-        =current_user.name + "様の予約一覧"
-        .nav
-            %ul
-                %li<
-    
-.main
-    .main-container
-        .main-image
-            = image_tag "green.jpg", alt: "写真"
-            .posts-container
+.show-header
+    .show-header-logo
+        =current_user.name + "様のページ"
+    .show-header-menu
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
 
+.show-main
+    .show-main-container
+        = image_tag "green.jpg", alt: "写真"   
+        %p 予約一覧   
+                 
+        .show-posts-container
