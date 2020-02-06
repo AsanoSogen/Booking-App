@@ -1,14 +1,16 @@
 class HostUsersController < ApplicationController
+    
 
     def index
     end
 
-    def new
-        @host_user = HostUser.new
-    end
-
     def show
         @host_user = HostUser.find(params[:id])
+        @books = @host_user.books
+    end
+
+    def new
+        @host_user = HostUser.new
     end
 
     def create
@@ -22,15 +24,11 @@ class HostUsersController < ApplicationController
 
     def update
         @host_user = HostUser.find(params[:id])
-        
         if @host_user.update(host_user_params)
             @host_user.image="#{@host_user.id}.jpg"
             image=params[:image]
         end
-    
-
         redirect_to host_user_path(@host_user)
-
     end
 
     private
@@ -45,4 +43,5 @@ class HostUsersController < ApplicationController
        end
     end
 
+    
 end

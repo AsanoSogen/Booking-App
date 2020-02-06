@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_01_145950) do
+ActiveRecord::Schema.define(version: 2020_02_03_053014) do
+
+  create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.string "image"
+    t.text "text"
+    t.integer "host_user_id"
+    t.datetime "start_dt", null: false
+    t.datetime "end_dt", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "host_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -29,6 +40,17 @@ ActiveRecord::Schema.define(version: 2020_02_01_145950) do
     t.index ["reset_password_token"], name: "index_host_users_on_reset_password_token", unique: true
   end
 
+  create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "book_id"
+    t.datetime "start_dt"
+    t.datetime "end_dt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_reservations_on_book_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -43,4 +65,6 @@ ActiveRecord::Schema.define(version: 2020_02_01_145950) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reservations", "books"
+  add_foreign_key "reservations", "users"
 end

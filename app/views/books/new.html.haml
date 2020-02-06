@@ -1,0 +1,19 @@
+= form_for [@host_user, @book ] ,url: host_user_path(@host_user.id) do |f| 
+    = f.hidden_field :book_id, value: @book.id 
+    .book-first
+    = f.label :開催日
+    = f.text_field  :start_dt,  :class => 'datepicker' 
+    .book-second
+    = f.label :締め切り
+    = f.text_field :end_dt, :class => 'datepicker'
+    .book-third
+    = f.label :イベント名
+    = f.text_field :title 
+    .book-fourth
+    = f.label :イベント詳細
+    = f.text_area :text
+    .book-fifth
+    = f.label :イメージ写真 do
+        = f.file_field :image
+                                    
+    = f.submit "この日程で予約する", class: "btn btn-danger btn-wide"  

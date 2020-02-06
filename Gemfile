@@ -66,3 +66,6 @@ gem "devise"
 gem "pry-byebug"
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'momentjs-rails', '>= 2.9.0'
+gem "font-awesome-rails"
+gem 'jquery-rails'

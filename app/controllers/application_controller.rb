@@ -29,6 +29,9 @@ class ApplicationController < ActionController::Base
       params.require(:host_users).permit(host_user_id)
     end
     
+    def after_sign_out_path_for(resource_or_scope)
+      root_path # ←redirect先にしたいpathを自分で書く
+    end
 
     
 

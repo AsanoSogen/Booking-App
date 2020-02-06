@@ -1,0 +1,16 @@
+.book-info
+    .book-data1
+        イベント名:
+        = book.title
+    .book-info2
+        .book-data2
+            = image_tag "#{book.image}"
+        .book-data3
+            = book.text
+    .book-data4
+        イベント開催日時:  
+        = book.start_dt.strftime("%Y年%m月%d日")
+    .book-data5
+        予約締め切り:
+        = book.end_dt.strftime("%Y年%m月%d日")
+

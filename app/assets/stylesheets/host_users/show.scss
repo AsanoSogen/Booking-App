@@ -60,19 +60,22 @@
         margin-left: 40%;
         margin-right: 150px;
         border: solid #ffffff 1px;
+        overflow: overlay;
 
       }
 
     .host-show-posts-container {
                 
-        width: 64%;
+        width: 80%;
         height: 550px;
         background-color: white;
-        margin-left: 18%;
-        margin-right: 18%;
+        margin-left: 10%;
+        margin-right: 10%;
         border: solid 1px #DDDDDD;
         position: absolute;
         top: 700px;
+        overflow: scroll;
+        
     }
 }
 

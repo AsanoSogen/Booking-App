@@ -7,11 +7,15 @@
 
 
     
-.host-show-main
+.host-show-main 
     .host-show-main-container
         = image_tag "#{@host_user.image}", alt: "「編集する」からプロフィール画面,自己紹介文を設定することができます"
     .host-profile
         = "#{@host_user.text}" 
 
     .host-show-posts-container 
-            
+        .host-show-posts-container1
+            = link_to "イベント投稿する", new_book_path(@host_user, @book) ,class: "btn"
+        
+        .host-show-posts-main
+            = render @books
