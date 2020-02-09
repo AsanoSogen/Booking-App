@@ -3,9 +3,13 @@ class BooksController < ApplicationController
     before_action :move_to_index, except: [:index, :create, :show]
 
 
-    def index
+    def index    
         @books = @host_user.books.includes(:host_user)
     end
+
+
+
+    def
 
     def new
         @host_user = HostUser.find(params[:host_user_id])

@@ -47,12 +47,18 @@
           
       }
 
-      .show-posts-container {
+    .show-posts-container {
         width: 1240px;
         height: 550px;
         background-color: white;
         margin-left: 100px;
         border: solid 1px #DDDDDD;
         position: absolute;
-      }
+        top: 400px;
+
+        .host_user_biglist {
+            margin: 30px;
+        }
+    }
+
 }

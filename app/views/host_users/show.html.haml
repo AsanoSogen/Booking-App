@@ -1,6 +1,6 @@
 .host-show-header
     .host-show-header-logo
-        =current_host_user.name 
+        = @host_user.name 
     .host-show-header-menu
         = link_to "ログアウト", destroy_host_user_session_path, method: :delete, class: 'btn'
         = link_to "編集する", edit_host_user_path, class: "btn"

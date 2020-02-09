@@ -9,5 +9,9 @@ class HostUser < ApplicationRecord
          
   mount_uploader :image, ImageUploader
 
+  def self.search(search)
+    HostUser.where('name LIKE(?)', "%#{search}%")
+  end
 
 end
+
