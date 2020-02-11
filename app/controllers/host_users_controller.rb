@@ -1,5 +1,5 @@
 class HostUsersController < ApplicationController
-    before_action :set_host_user, except: [:index, :search]
+    before_action :set_host_user, except: [:index, :show, :search]
 
     def index
         @host_users = HostUser.all
@@ -8,7 +8,8 @@ class HostUsersController < ApplicationController
 
     def show
         @host_user = HostUser.find(params[:id])
-        @books = @host_user.books
+        @books = @host_user.books.order("created_at DESC")
+        @book = Book.find(params[:id])
     end
 
     def new
@@ -43,7 +44,7 @@ class HostUsersController < ApplicationController
 
     private
     def host_user_params
-        params.require(:host_user).permit(:name, :email, :image, :text)
+        params.permit(:name, :email, :image, :text)
     end
 
     def set_host_user

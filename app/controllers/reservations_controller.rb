@@ -1,24 +1,27 @@
 class ReservationsController < ApplicationController
+    before_action :set_book
 
     def create
-        @reservation = current_user.reservations.create(reservation_params)
-        redirect_to root_path notice:"予約が完了しました"
+        @reservation = Reservation.create(reservation_params)
+        #binding.pry
+        redirect_to user_path(current_user.id), notice:"予約が完了しました"
     end
 
     def index
-        @reservations = current_user.reservations.all
+        redirect_to user_path(current_user.id), notice:"予約が完了しました"
     end
- 
-    def lend
-      @books = current_user.books
-    end 
 
     
     private
 
     def reservation_params
-       params.require(:reservation).permit(:start_date, :end_date, :book_id)
-    end 
+       params.require(:reservation).permit(:id).merge(user_id: current_user.id)
+    end
+
+    def set_book
+        @book = Book.find(params[:book_id])
+    end
+    
 
 
 end

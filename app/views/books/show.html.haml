@@ -1,0 +1,4 @@
+= form_for [@book, @book.reservations.new] do |f|
+    = f.hidden_field :book_id, value: @book.id 
+
+    = f.submit "予約する", class: "btn btn-danger btn-wide"

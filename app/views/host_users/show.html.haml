@@ -15,7 +15,8 @@
 
     .host-show-posts-container 
         .host-show-posts-container1
-            = link_to "イベント投稿する", new_book_path(@host_user, @book) ,class: "btn"
+            =link_to "イベント投稿する", new_book_path(book_id: @book) ,class: "btn"
+        
         
         .host-show-posts-main
             = render @books

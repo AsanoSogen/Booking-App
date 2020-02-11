@@ -14,15 +14,16 @@ Rails.application.routes.draw do
   
   resources :users, only: [:index,  :show, :new, :create, :edit, :update] 
 
-  resources :host_users, only: [:index, :show, :new, :create, :edit, :update] do
+  resources :host_users, only: [:index, :show, :new, :create, :edit, :update] do 
     collection do
       get :search
     end 
   end
 
   resources :books, only: [:index, :new, :create, :show] do
-    resources :reservations
-  end 
+    resources :reservations, only: [:index, :create]
+  end
+  
 
   
 
