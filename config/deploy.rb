@@ -3,7 +3,7 @@
 lock '3.12.0'
 
 # Capistranoのログの表示に利用する
-set :application, 'Booking-app'
+set :application, 'Booking-App'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:AsanoSogen/Booking-App.git'
