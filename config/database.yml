@@ -50,5 +50,7 @@ test:
 production:
   <<: *default
   database: Booking-App_production
-  username: Booking-App
-  password: <%= ENV['BOOKING-APP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
+  
