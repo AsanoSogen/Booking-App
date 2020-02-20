@@ -18,7 +18,7 @@
 //= require_tree .
 //= require moment
 //= require moment/ja.js
-//= require tempusdominus-bootstrap-4.js
+
 
 var data = {'data-date-format': 'YYYY-MM-DD' };
 $(function(){
